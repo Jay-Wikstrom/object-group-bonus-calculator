@@ -31,6 +31,12 @@ const employees = [
   }
 ];
 
+const testSingleEmployee = {
+  name: 'Atticus',
+  employeeNumber: '2405',
+  annualSalary: '68000',
+  reviewRating: 5
+}
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
@@ -41,3 +47,56 @@ const employees = [
 // Ask questions when you don't.
 
 console.log( employees );
+
+function displayEmployees(employeeArray){
+  for(let employee of employeeArray){
+    console.log(employee);
+  }
+}
+displayEmployees(employees);
+
+function newEmployeeInfo(employee){
+  let bonusPercentage = 0;
+  if (employee.reviewRating === 3){
+    bonusPercentage = 0.04;
+  } else if (employee.reviewRating === 4){
+    bonusPercentage = 0.06; 
+  } else if (employee.reviewRating === 5){
+    bonusPercentage = 0.10;
+  }
+
+  if (employee.employeeNumber.length === 4){
+    bonusPercentage = bonusPercentage + 0.05;
+  }
+
+  if (parseInt(employee.annualSalary) >= 65000){
+    bonusPercentage -= 0.01;
+  }
+
+  if(bonusPercentage > 0.13){
+    bonusPercentage = 0.13;
+  }
+
+  let totalBonus = bonusPercentage * parseInt(employee.annualSalary);
+  let totalCompensation = parseInt(employee.annualSalary) + totalBonus;
+
+  let newEmployeeInfoObject = {
+    name: employee.name,
+    bonusPercentage: bonusPercentage,
+    totalBonus: totalBonus,
+    totalCompensation: totalCompensation
+  }
+
+  console.log(newEmployeeInfoObject)
+  
+}
+
+
+/*
+for (let employee of employees) {
+  
+}
+*/
+
+newEmployeeInfo(testSingleEmployee);
+
