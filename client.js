@@ -31,12 +31,6 @@ const employees = [
   }
 ];
 
-const testSingleEmployee = {
-  name: 'Atticus',
-  employeeNumber: '2405',
-  annualSalary: '68000',
-  reviewRating: 5
-}
 // YOU SHOULD NOT NEED TO CHANGE ANYTHING ABOVE THIS POINT
 
 // Take small steps! Don't write a for loop and two functions that do all of the calculations right away.
@@ -96,13 +90,8 @@ function newEmployeeInfo(employee){
   
 }
 
-
-
 for (let employee of employees) {
-  newEmployeeInfo(employee)
-  //console.log(employee);  
+  newEmployeeInfo(employee) 
 }
 
-
-//newEmployeeInfo(testSingleEmployee);
 
