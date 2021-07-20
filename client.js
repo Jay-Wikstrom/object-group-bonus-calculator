@@ -82,6 +82,7 @@ function newEmployeeInfo(employee){
   }
 
   let totalBonus = bonusPercentage * parseInt(employee.annualSalary);
+  totalBonus = Math.ceil(totalBonus);
   let totalCompensation = parseInt(employee.annualSalary) + totalBonus;
 
   let newEmployeeInfoObject = {
@@ -98,9 +99,10 @@ function newEmployeeInfo(employee){
 
 
 for (let employee of employees) {
-  employees.push(employee);
+  newEmployeeInfo(employee)
+  //console.log(employee);  
 }
 
 
-newEmployeeInfo(testSingleEmployee);
+//newEmployeeInfo(testSingleEmployee);
 
